@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22f031d0-262c-4904-af28-37d5ea464949" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trading_advisor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/trading_advisor.ipynb" afterDir="false" />
     </list>
@@ -17,6 +19,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Jupyter Notebook" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -34,9 +37,12 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.testing.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/jocksolo/PycharmProjects/trading_advisor",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -45,6 +51,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/notebooks" />
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/src" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -60,11 +77,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1710805551330</updated>
-      <workItem from="1710805553112" duration="17701000" />
+      <workItem from="1710805553112" duration="89964000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/trading_advisor$testing.coverage" NAME="testing Coverage Results" MODIFIED="1711318940298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
