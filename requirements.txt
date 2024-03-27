@@ -4,3 +4,5 @@ numpy
 tensorflow
 requests
 scikit-learn
+os
+dotenv

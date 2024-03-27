@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="22f031d0-262c-4904-af28-37d5ea464949" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/jocksolo.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NVDA_historical_data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/raw/NVDA_historical_data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/trading_advisor_model.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_saved_model/fingerprint.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_saved_model/saved_model.pb" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_saved_model/variables/variables.data-00000-of-00001" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_saved_model/variables/variables.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trading_advisor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/trading_advisor.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trading_advisor_model.keras" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trading_advisor.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/notebooks/trading_advisor.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trading_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/trading_predictor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,10 +61,10 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/notebooks" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/data/raw" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/notebooks" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
   </component>
@@ -91,7 +84,7 @@
       <option name="presentableId" value="Default" />
       <updated>1710805551330</updated>
       <workItem from="1710805553112" duration="101614000" />
-      <workItem from="1711418821863" duration="29493000" />
+      <workItem from="1711418821863" duration="33712000" />
     </task>
     <servers />
   </component>
@@ -99,7 +92,7 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/trading_advisor$trading_predictor.coverage" NAME="trading_predictor Coverage Results" MODIFIED="1711501432370" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/trading_advisor$trading_predictor.coverage" NAME="trading_predictor Coverage Results" MODIFIED="1711550423998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_advisor$app.coverage" NAME="app Coverage Results" MODIFIED="1711500726652" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/trading_advisor$testing.coverage" NAME="testing Coverage Results" MODIFIED="1711318940298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>

@@ -1,12 +1,10 @@
 import pandas as pd
 import requests
 import numpy as np
-from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 from datetime import datetime, timedelta
 from sklearn.linear_model import Ridge
-from joblib import dump, load
 
 
 # Function to fetch metadata and determine start date
@@ -15,7 +13,6 @@ def get_start_date(symbol, token, max_years=15):
     meta_url = f'https://api.tiingo.com/tiingo/daily/{symbol}?token={token}'
     meta_response = requests.get(meta_url, headers=headers)
     meta_data = meta_response.json()
-    print(meta_data)
     
     # Extract the start date from metadata
     start_date = datetime.strptime(meta_data['startDate'], '%Y-%m-%d')
@@ -45,16 +42,6 @@ def calculate_rsi(data, window=14):
     rsi = 100 - (100 / (1 + rs))
     return rsi
 
-# Token and stock symbol input
-# token = "3ab68f4b54224a51847d25a4dc930dfa87b55e2a"
-# stock_symbol = input("Enter Stock Symbol ").lower()
-
-def call_api():
-    pass
-# Fetch data using the new dynamic start date logic
-# stock_data = fetch_data(stock_symbol, token)
-# index_data = fetch_data('spy', token)  # SPY as an example for the index
-# vxx_data = fetch_data('vxx', token)  # VXX data
 
 def preprocess_data(stock_data, index_data, vxx_data):
 
@@ -123,20 +110,18 @@ def model_operation(X_train, y_train, stock_data):
     future_dates = pd.date_range(last_date, periods=10, freq='B')
 
     for _ in range(10):
-        # Predict the next day's price
+        # Predict the prices
         next_day_prediction = model.predict(features_for_prediction)[0]
         predictions.append(next_day_prediction)
 
-        # For simplification, we'll manually shift the lag features and assume the rest remain constant
-        # This approach may need adjustment based on how the non-lag features are supposed to evolve over time
         features_for_prediction[0][7] = next_day_prediction  # Update lag_1_day with the new prediction
         features_for_prediction[0][8] = features_for_prediction[0][7]  # Shift previous lag_1_day to lag_5_days
         features_for_prediction[0][9] = features_for_prediction[0][8]  # Shift previous lag_5_days to lag_30_days
         features_for_prediction[0][10] = features_for_prediction[0][9]  # Shift previous lag_30_days to lag_60_days
-        # NOTE: The above logic is simplistic and assumes direct shifting which may not accurately represent your feature dynamics
 
-    # Assuming `model.predict()` expects 2D input and returns a 1D array of predictions
     predictions_df = pd.DataFrame({'Date': future_dates, 'Predicted Adj Close': predictions})
+    predictions_df['Date'] = predictions_df['Date'].dt.date
+    predictions_df.set_index('Date', inplace=True)
 
     return predictions_df
 
