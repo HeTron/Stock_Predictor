@@ -138,7 +138,7 @@ def model_operation(X_train, y_train, stock_data):
 
     predictions_df = pd.DataFrame({'Date': future_dates, 'Predicted Adj Close': predictions})
     predictions_df['Date'] = predictions_df['Date'].dt.date
-    predictions_df.set_index('Date', inplace=True)
+    # predictions_df.set_index('Date', inplace=True)
 
     return predictions_df
 
