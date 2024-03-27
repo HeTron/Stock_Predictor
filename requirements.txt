@@ -1,8 +1,7 @@
 streamlit
 pandas
 numpy
-tensorflow
 requests
 scikit-learn
-os
-dotenv
+python-dotenv
+joblib
