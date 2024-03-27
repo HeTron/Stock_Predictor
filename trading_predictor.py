@@ -8,11 +8,15 @@ from sklearn.linear_model import Ridge
 
 
 # Function to fetch metadata and determine start date
-def get_start_date(symbol, token, max_years=15):
+def get_start_date(stock_symbol, token, max_years=15):
     headers = {'Content-Type': 'application/json'}
-    meta_url = f'https://api.tiingo.com/tiingo/daily/{symbol}?token={token}'
+    meta_url = f'https://api.tiingo.com/tiingo/daily/{stock_symbol}?token={token}'
     meta_response = requests.get(meta_url, headers=headers)
     meta_data = meta_response.json()
+
+    if 'startDate' not in meta_data:
+        print("startDate not found in response. Response was:", meta_data)
+        return "2019-01-01"
     
     # Extract the start date from metadata
     start_date = datetime.strptime(meta_data['startDate'], '%Y-%m-%d')
@@ -25,10 +29,10 @@ def get_start_date(symbol, token, max_years=15):
     return optimal_start_date
 
 # Your existing function for fetching data, updated to use the dynamic start date
-def fetch_data(symbol, optimal_start_date, token):
+def fetch_data(stock_symbol, optimal_start_date, token):
     # start_date = get_start_date(symbol, token)
     headers = {'Content-Type': 'application/json'}
-    url = f'https://api.tiingo.com/tiingo/daily/{symbol}/prices?startDate={optimal_start_date}&token={token}'
+    url = f'https://api.tiingo.com/tiingo/daily/{stock_symbol}/prices?startDate={optimal_start_date}&token={token}'
     response = requests.get(url, headers=headers)
     return pd.DataFrame(response.json())
 
