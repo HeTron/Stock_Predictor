@@ -34,7 +34,20 @@ def fetch_data(stock_symbol, optimal_start_date, token):
     headers = {'Content-Type': 'application/json'}
     url = f'https://api.tiingo.com/tiingo/daily/{stock_symbol}/prices?startDate={optimal_start_date}&token={token}'
     response = requests.get(url, headers=headers)
-    return pd.DataFrame(response.json())
+    json_response = response.json()
+
+    if isinstance(json_response, list):
+        # Directly convert list of records to DataFrame
+        return pd.DataFrame(json_response)
+    elif isinstance(json_response, dict):
+        # For a single dictionary, wrap it in a list before creating the DataFrame
+        return pd.DataFrame([json_response])
+    else:
+        # Handle unexpected response types (e.g., empty response or error message)
+        print("Unexpected JSON response format:", json_response)
+        # Return an empty DataFrame or raise an error as appropriate
+        return pd.DataFrame()
+
 
 # Calculate RSI
 def calculate_rsi(data, window=14):
