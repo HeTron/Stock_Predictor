@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="22f031d0-262c-4904-af28-37d5ea464949" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_stock_predictor.joblib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/trading_predictor.py" beforeDir="false" afterPath="$PROJECT_DIR$/trading_predictor.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "hassan",
     "last_opened_file_path": "/Users/jocksolo/PycharmProjects/trading_advisor",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
