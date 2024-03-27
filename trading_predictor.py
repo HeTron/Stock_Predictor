@@ -25,10 +25,10 @@ def get_start_date(symbol, token, max_years=15):
     return optimal_start_date
 
 # Your existing function for fetching data, updated to use the dynamic start date
-def fetch_data(symbol, token):
-    start_date = get_start_date(symbol, token)
+def fetch_data(symbol, optimal_start_date, token):
+    # start_date = get_start_date(symbol, token)
     headers = {'Content-Type': 'application/json'}
-    url = f'https://api.tiingo.com/tiingo/daily/{symbol}/prices?startDate={start_date}&token={token}'
+    url = f'https://api.tiingo.com/tiingo/daily/{symbol}/prices?startDate={optimal_start_date}&token={token}'
     response = requests.get(url, headers=headers)
     return pd.DataFrame(response.json())
 

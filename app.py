@@ -14,11 +14,12 @@ stock_symbol = st.text_input('Stock Symbol').upper()
 
 if st.button('Predict'):
     if stock_symbol:
+        optimal_start_date = get_start_date(stock_symbol, token)
 
         # Fetch the historical data
-        stock_data = fetch_data(stock_symbol, token)
-        index_data = fetch_data('spy', token)
-        vxx_data = fetch_data('vxx', token)
+        stock_data = fetch_data(stock_symbol, optimal_start_date, token)
+        index_data = fetch_data('spy', optimal_start_date, token)
+        vxx_data = fetch_data('vxx', optimal_start_date, token)
 
         stock_data, index_data, vxx_data = preprocess_data(stock_data, index_data, vxx_data)
 
