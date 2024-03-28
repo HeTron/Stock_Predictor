@@ -30,4 +30,3 @@ if st.button('Predict'):
         st.write(predictions_df)
     else:
         st.write("Please enter a valid stock symbol.")
-

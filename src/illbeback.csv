@@ -1,0 +1,40 @@
+session_token = os.getenv('OPENAI_KEY')
+api = ChatAPI(session_token)
+buy = api2.send_message(f'3 reasons to buy {ticker} stock')
+sell = api2.send_message(f'3 reasons to sell {ticker} stock')
+swot = api2.send_message(f'SWOT analysis of {ticker} stock')
+
+with openai1:
+    buy_reason, sell_reason, swot_analysis = st.tabs(['3 Reasons to Buy', '3 Reasons to Sell', 'SWOT Analysis'])
+
+    with buy_reason:
+        st.subheader('3 Reasons on why to BUY {ticker} Stock')
+        st.write(buy['message'])
+    with sell_reason:
+        st.subheader('3 Reasons on why to SELL {ticker} Stock')
+        st.write(sell['message'])
+    with swot_analysis:
+        st.subheader('SWOT Analysis of {ticker} Stock')
+        st.write(swot['message'])
+
+
+
+from alpha_vantage.fundamentaldata import FundamentalData
+#with fundamental_data:
+    ALPHAVANTAGE_API_KEY1 = os.getenv('ALPHAVANTAGE_API_KEY2')
+    fd = FundamentalData(ALPHAVANTAGE_API_KEY2,output_format='pandas')
+    st.subheader('Balance Sheet')
+    balance_sheet = fd.get_balance_sheet_annual(ticker)[0]
+    bs = balance_sheet.T.iloc[2:]
+    bs.columns = list(balance_sheet.T.iloc[0])
+    st.write(bs)
+    st.subheader('Income Statement')
+    income_statement = fd.get_income_statement_annual(ticker)[0]
+    is1 = income_statement.T[2:]
+    is1.columns = list(income_statement.T.iloc[0])
+    st.write(is1)
+    st.subheader('Cash Flow Statement')
+#    cash_flow = fd.get_cash_flow_annual(ticker)[0]
+    cf = cash_flow.T[2:]
+    cf.columns = list(cash_flow.T.iloc[0])
+    st.write(cf)

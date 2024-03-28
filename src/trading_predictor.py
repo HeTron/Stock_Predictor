@@ -101,8 +101,7 @@ def preprocess_data(stock_data, index_data, vxx_data):
     return stock_data, index_data, vxx_data
 
 def training_data_prep(stock_data):
-    # Features and target
-    # X = stock_data[['RSI', 'price_ratio_to_index', 'price_ratio_to_vxx', 'price_diff_from_index', 'price_diff_from_vxx', 'log_returns', 'volatility_adjusted_returns', 'lag_1_day', 'lag_5_days', 'lag_30_days', 'lag_60_days', 'ma_14', 'index_ma_14', 'stock_over_ma_14', 'index_over_ma_14', 'ma_30', 'index_ma_30', 'stock_over_ma_30', 'index_over_ma_30', 'ma_90', 'index_ma_90', 'stock_over_ma_90', 'index_over_ma_90']]
+    
     X = stock_data[['RSI', 'price_ratio_to_index', 'price_ratio_to_vxx', 'price_diff_from_index', 'price_diff_from_vxx', 'log_returns', 'volatility_adjusted_returns', 'lag_1_day', 'lag_5_days', 'lag_30_days', 'lag_45_days']]
     y = stock_data['adjClose']
 
@@ -138,11 +137,6 @@ def model_operation(X_train, y_train, stock_data):
 
     predictions_df = pd.DataFrame({'Date': future_dates, 'Predicted Adj Close': predictions})
     predictions_df['Date'] = predictions_df['Date'].dt.date
-    # predictions_df.set_index('Date', inplace=True)
+    predictions_df.set_index('Date', inplace=True)
 
     return predictions_df
-
-
-
-
-
