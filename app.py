@@ -10,9 +10,8 @@ token = os.getenv('TIINGO_API_KEY')
 
 # Streamlit app
 st.title('Stock Price Prediction')
-st.write('Enter Stock Symbol')
 
-stock_symbol = st.text_input('Stock Symbol').upper()
+stock_symbol = st.text_input('Enter Stock Symbol').upper()
 
 if st.button('Predict'):
     if stock_symbol:
