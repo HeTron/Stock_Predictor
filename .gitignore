@@ -2,3 +2,5 @@
 trading_advisor_copy.py
 trading_advisor_copy.ipynb
 .idea/
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
